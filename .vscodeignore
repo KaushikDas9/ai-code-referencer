@@ -1,5 +1,7 @@
 demo.mp4
+demo.gif
 *.vsix
 node_modules/
 .DS_Store
 *.log
+

@@ -39,8 +39,9 @@
   "main": "./extension.js",
   "contributes": {
     "configuration": {
-      "title": "AGY Code Referencer",
+      "title": "AI Code Referencer",
       "properties": {
+
         "agyCodeReferencer.defaultFormat": {
           "type": "string",
           "default": "agy",
