@@ -54,14 +54,15 @@ function buildReferenceText(relativePath, selection, format, readSelectionText, 
         case 'agy':
         case 'codex':
         case 'claude-code':
-            return `@${relativePath}\n\nline ${lineInfo}:\n${selectedText}`;
+            return `@${relativePath}\n\nline ${lineInfo}:\n${selectedText}\n`;
         case 'markdown':
-            return `[${relativePath}](./${relativePath}${getMarkdownAnchor(lineInfo)})\n\n${selectedText}`;
+            return `[${relativePath}](./${relativePath}${getMarkdownAnchor(lineInfo)})\n\n${selectedText}\n`;
         case 'plain':
-            return `${relativePath}:${lineInfo}\n\n${selectedText}`;
+            return `${relativePath}:${lineInfo}\n\n${selectedText}\n`;
         default:
-            return `@${relativePath}\n\nline ${lineInfo}:\n${selectedText}`;
+            return `@${relativePath}\n\nline ${lineInfo}:\n${selectedText}\n`;
     }
+
 }
 
 module.exports = {
