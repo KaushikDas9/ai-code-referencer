@@ -1,0 +1,7 @@
+# Dependency & Build Artifacts
+node_modules/
+*.vsix
+.DS_Store
+
+# Temporary files
+*.log

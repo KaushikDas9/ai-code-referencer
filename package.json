@@ -1,0 +1,121 @@
+{
+  "name": "ai-code-referencer",
+  "displayName": "AI Code Referencer",
+  "description": "Copy formatted code references with relative file paths, line numbers & snippets for Claude Code, AGY, Codex, Cursor, & ChatGPT.",
+  "version": "0.0.1",
+  "publisher": "koushikdas",
+  "icon": "icon.png",
+  "homepage": "https://ko-fi.com/koushikdas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KaushikDas9/ai-code-referencer"
+  },
+
+
+  "keywords": [
+    "ai",
+    "prompt",
+    "claude",
+    "agy",
+    "codex",
+    "cursor",
+    "chatgpt",
+    "copy reference",
+    "line numbers",
+    "file path"
+  ],
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+
+
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "AGY Code Referencer",
+      "properties": {
+        "agyCodeReferencer.defaultFormat": {
+          "type": "string",
+          "default": "agy",
+          "enum": ["agy", "codex", "claude-code", "markdown", "plain"],
+          "enumDescriptions": [
+            "AGY style: @path + line N:",
+            "Codex style: @path + line N:",
+            "Claude Code style: @path + line N:",
+            "Markdown link with line anchor",
+            "Plain path:line format"
+          ],
+          "description": "Default output format used when copying code references."
+        },
+        "agyCodeReferencer.hostDefaults": {
+          "type": "object",
+          "default": {
+            "cursor": "claude-code",
+            "vscode": "agy"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["agy", "codex", "claude-code", "markdown", "plain"]
+          },
+          "description": "Per-host fallback formats keyed by a lowercase host keyword such as cursor or vscode."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "agy.copyReference",
+        "title": "AI Code Referencer: Copy Code Reference"
+      },
+      {
+        "command": "agy.copyReferenceChooseFormat",
+        "title": "AI Code Referencer: Choose Output Format"
+      },
+      {
+        "command": "agy.copyReferenceClaudeCode",
+        "title": "AI Code Referencer: Copy (Claude Code)"
+      },
+      {
+        "command": "agy.copyReferenceCodex",
+        "title": "AI Code Referencer: Copy (Codex)"
+      },
+      {
+        "command": "agy.supportKoFi",
+        "title": "AI Code Referencer: Support on Ko-fi ☕"
+      }
+    ],
+
+    "keybindings": [
+      {
+        "command": "agy.copyReference",
+        "key": "cmd+alt+r",
+        "mac": "cmd+alt+r",
+        "win": "ctrl+alt+r",
+        "linux": "ctrl+alt+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "agy.copyReferenceChooseFormat",
+        "key": "cmd+alt+shift+r",
+        "mac": "cmd+alt+shift+r",
+        "win": "ctrl+alt+shift+r",
+        "linux": "ctrl+alt+shift+r",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+
+  "scripts": {
+    "package": "vsce package",
+    "test": "node test-formatter.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0"
+  }
+}
