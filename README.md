@@ -4,7 +4,8 @@ A lightweight, super-fast VS Code extension to copy code snippets with relative 
 
 ## Quick Demo 🎬
 
-<video src="https://raw.githubusercontent.com/KaushikDas9/ai-code-referencer/main/demo.mp4" controls autoplay loop muted width="100%"></video>
+![AI Code Referencer Demo](demo.gif)
+
 
 
 
