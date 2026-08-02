@@ -3,8 +3,9 @@
   "displayName": "AI Code Referencer",
   "description": "Copy formatted code references with relative file paths, line numbers & snippets for Claude Code, AGY, Codex, Cursor, & ChatGPT.",
   "version": "0.0.1",
-  "publisher": "koushikdas",
+  "publisher": "koushik-kodastech",
   "icon": "icon.png",
+
   "homepage": "https://ko-fi.com/koushikdas",
   "repository": {
     "type": "git",
